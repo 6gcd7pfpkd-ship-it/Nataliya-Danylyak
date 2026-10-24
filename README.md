@@ -1,2 +1,32 @@
 # Nataliya-Danylyak
-Website for Nataliya Danylyak, a Ukrainian lifestyle blogger who moved from Lviv to Chicago. She creates content about life in the USA, interesting places, family trips, events, and beauty. Brands can learn about her services and order advertising in stories, reels, and posts, or request reviews of places and events.
+Сайт лайфстайл-блогерки Наталії Даниляк — українки зі Львова, яка живе в Чикаго. Життя в США, цікаві місця, сімейні подорожі, події та б’юті. Бренди можуть дізнатися про послуги й замовити рекламу в сторіс, рілс і постах або огляд місця чи події.
+
+- Instagram: [@natali_danylak](https://www.instagram.com/natali_danylak/)
+- TikTok: [@nataliya.dan](https://www.tiktok.com/@nataliya.dan)
+
+## Структура
+
+Односторінковий статичний сайт українською, без збірки:
+
+- `index.html` — розмітка й усі тексти
+- `styles.css` — дизайн і адаптивність (телефони, планшети, комп’ютери)
+- `script.js` — налаштування (`CONFIG`), меню, форма заявки
+- `assets/` — орнамент-вишивка, розетка, іконка сайту; сюди ж кладіть фото
+- `.nojekyll` — щоб GitHub Pages віддавав файли як є
+
+## Публікація на GitHub Pages
+
+1. Злийте гілку з сайтом у `main`.
+2. У репозиторії: **Settings → Pages → Build and deployment → Source: Deploy from a branch**, гілка `main`, папка `/ (root)`, **Save**.
+3. За хвилину-дві сайт буде за адресою `https://<ім’я-акаунта>.github.io/Nataliya-Danylyak/`.
+
+Власний домен можна під’єднати там само, у полі **Custom domain**.
+
+## Що налаштувати
+
+- **Фото.** Покладіть портрет у `assets/photo.jpg` (вертикальне, приблизно 4:5) — він замінить градієнт на головному екрані.
+- **Форма заявки** (`CONFIG` у `script.js`):
+  - за замовчуванням текст заявки копіюється, і відкривається Instagram Direct — клієнт вставляє текст і надсилає;
+  - `email: "адреса@пошта"` — форма відкриватиме поштовий застосунок з готовим листом, а в контактах з’явиться картка Email;
+  - `formspree: "ID"` — заявки приходитимуть на пошту напряму. Зареєструйтеся на [formspree.io](https://formspree.io), створіть форму й вставте її ID (частина після `/f/`).
+- **Тексти** редагуються прямо в `index.html`.
