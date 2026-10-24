@@ -1,21 +1,32 @@
 # Nataliya-Danylyak
-Website for Nataliya Danylyak, a Ukrainian lifestyle blogger who moved from Lviv to Chicago. She creates content about life in the USA, interesting places, family trips, events, and beauty. Brands can learn about her services and order advertising in stories, reels, and posts, or request reviews of places and events.
+Сайт лайфстайл-блогерки Наталії Даниляк — українки зі Львова, яка живе в Чикаго. Життя в США, цікаві місця, сімейні подорожі, події та б’юті. Бренди можуть дізнатися про послуги й замовити рекламу в сторіс, рілс і постах або огляд місця чи події.
 
-## The site
+- Instagram: [@natali_danylak](https://www.instagram.com/natali_danylak/)
+- TikTok: [@nataliya.dan](https://www.tiktok.com/@nataliya.dan)
 
-A static, single-page site with no build step. It works in English and Ukrainian (EN/UA switch in the header).
+## Структура
 
-- `index.html` – page structure and English text
-- `styles.css` – design and responsive layout
-- `script.js` – contact settings, Ukrainian translations, mobile menu, brief form
-- `images/` – put photos here
+Односторінковий статичний сайт українською, без збірки:
 
-Open `index.html` in a browser to preview it. It can be hosted on any static host (GitHub Pages, Netlify, Vercel).
+- `index.html` — розмітка й усі тексти
+- `styles.css` — дизайн і адаптивність (телефони, планшети, комп’ютери)
+- `script.js` — налаштування (`CONFIG`), меню, форма заявки
+- `assets/` — орнамент-вишивка, розетка, іконка сайту; сюди ж кладіть фото
+- `.nojekyll` — щоб GitHub Pages віддавав файли як є
 
-## Before publishing
+## Публікація на GitHub Pages
 
-1. **Contacts** – edit `CONFIG` at the top of `script.js` (email and Instagram link/handle). The current values are placeholders.
-2. **Photo** – add a portrait at `images/hero.jpg` (portrait orientation, about 4:5). It replaces the gradient in the hero automatically.
-3. **Texts** – English text is in `index.html`; Ukrainian translations are in the `UK` object in `script.js`, matched by the `data-i18n` keys.
+1. Злийте гілку з сайтом у `main`.
+2. У репозиторії: **Settings → Pages → Build and deployment → Source: Deploy from a branch**, гілка `main`, папка `/ (root)`, **Save**.
+3. За хвилину-дві сайт буде за адресою `https://<ім’я-акаунта>.github.io/Nataliya-Danylyak/`.
 
-The brief form opens the visitor's email app with a pre-filled message to the address in `CONFIG`. To receive submissions without email apps, connect a form service such as Formspree.
+Власний домен можна під’єднати там само, у полі **Custom domain**.
+
+## Що налаштувати
+
+- **Фото.** Покладіть портрет у `assets/photo.jpg` (вертикальне, приблизно 4:5) — він замінить градієнт на головному екрані.
+- **Форма заявки** (`CONFIG` у `script.js`):
+  - за замовчуванням текст заявки копіюється, і відкривається Instagram Direct — клієнт вставляє текст і надсилає;
+  - `email: "адреса@пошта"` — форма відкриватиме поштовий застосунок з готовим листом, а в контактах з’явиться картка Email;
+  - `formspree: "ID"` — заявки приходитимуть на пошту напряму. Зареєструйтеся на [formspree.io](https://formspree.io), створіть форму й вставте її ID (частина після `/f/`).
+- **Тексти** редагуються прямо в `index.html`.
